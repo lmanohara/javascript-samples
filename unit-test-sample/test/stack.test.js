@@ -1,24 +1,4 @@
-class Stack {
-    constructor() {
-        this.top = -1;
-        this.items = {};
-    }
-
-    get peek() {
-        return this.items[this.top];
-    }
-
-    push(value) {
-        this.top += 1;
-        this.items[this.top] = value;
-    }
-
-    pop() {
-        this.items[this.top] = null;
-        this.top -= 1;
-    }
-}
-
+const Stack = require('../stack');
 
 describe('Testing stack', () => {
 
@@ -46,6 +26,7 @@ describe('Testing stack', () => {
 
         stack.push('itemA');
         stack.push('itemB');
+
         stack.pop();
 
         expect(stack.top).toBe(0);
